@@ -1,0 +1,26 @@
+[project]
+name = "survey-generator-project"
+version = "0.1.0"
+description = "Survey generation APIs"
+authors = [
+    {name = "Navneet Singh Tomar",email = "navneet_tomar11@hotmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django (>=5.1.7,<6.0.0)",
+    "djangorestframework (>=3.15.2,<4.0.0)",
+    "psycopg2 (>=2.9.10,<3.0.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)",
+    "drf-nested-routers (>=0.94.1,<0.95.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+runserver = "python manage.py runserver"
+makemigrations = "python manage.py makemigrations"
+migrate = "python manage.py migrate"
