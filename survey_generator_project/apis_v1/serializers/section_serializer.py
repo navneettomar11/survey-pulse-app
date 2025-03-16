@@ -1,12 +1,10 @@
-from rest_framework.serializers import ModelSerializer
-
-from apis_v1.models import SectionModel
-from apis_v1.serializers import QuestionGroupSerializer
+from rest_framework.serializers import ModelSerializer, PrimaryKeyRelatedField
+from apis_v1.models import SectionModel, SurveyModel
+from apis_v1.serializers import SurveySerializer
 
 
 class SectionSerializer(ModelSerializer):
-    groups = QuestionGroupSerializer(many=True, read_only=True)
-
+    survey = SurveySerializer(read_only=True)
     class Meta:
         model = SectionModel
-        fields = ['title', 'body', 'groups']
+        fields = ['id', 'title', 'body', 'survey']

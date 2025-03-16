@@ -1,11 +1,11 @@
 from rest_framework.serializers import ModelSerializer
 from apis_v1.models import QuestionGroupModel
-from apis_v1.serializers import QuestionSerializer
+from apis_v1.serializers import SectionSerializer
 
 
 class QuestionGroupSerializer(ModelSerializer):
-    questions = QuestionSerializer(many=True, read_only=True)
+    section = SectionSerializer(read_only=True)
 
     class Meta:
         model = QuestionGroupModel
-        fields = ['number_of_questions', 'questions']
+        fields = ['id','number_of_questions', 'section']

@@ -7,5 +7,5 @@ class QuestionModel(BaseModel):
     sequence_no = IntegerField(default=0)
     text = TextField(blank=False, null=False)
     helpText = TextField(blank=True, null=True)
-    parent = ForeignKey("QuestionModel", null=True, on_delete=SET_NULL)
+    parent = ForeignKey("QuestionModel", null=True, blank=True, on_delete=SET_NULL)
     group = ForeignKey(QuestionGroupModel, on_delete=CASCADE)

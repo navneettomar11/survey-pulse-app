@@ -1,3 +1,4 @@
+from .base_viewset import BaseViewSet
 from .answer_viewset import AnswerViewSet
 from .choice_viewset import ChoiceViewSet
 from .survey_viewset import SurveyViewSet
